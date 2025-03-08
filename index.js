@@ -21,13 +21,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // If in viewport, show the animation
     checkElementLocation();
     
     // Attach scroll event listener
     window.addEventListener('scroll', function() {
         checkElementLocation();
+    });
+
+    const navbarToggle = document.querySelector('.navbar_toggle');
+    const navbarList = document.querySelector('.navbar');
+
+    navbarToggle.addEventListener('click', () => {
+        if (navbarList.classList.contains('close')) {
+            navbarList.classList.toggle('close');
+            navbarList.classList.toggle('open');
+        } else {
+            navbarList.classList.toggle('open');
+            navbarList.classList.toggle('close');
+        }
+        document.body.classList.toggle('stop_scroll');
     });
 
     // contact_dropdown_select

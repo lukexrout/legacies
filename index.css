@@ -880,3 +880,62 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.navbar_toggle {
+  display: none;
+}
+
+@media (max-width: 777px) {
+  .navbar_toggle {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    left: 10px;
+    height: 70px;
+    width: 70px;
+    border-radius: 25%;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #002ed0;
+    background: linear-gradient(150deg, #bba046, #e5dbb9, #fbf9f3);
+    cursor: pointer;
+    opacity: 0;
+    animation: fade-in 3s forwards;
+  }
+  .navbar {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+  }
+  .navbar.open {
+    display: flex;
+    opacity: 1;
+    animation: fade-in 1s forwards;
+  }
+
+  .navbar.close {
+    display: flex;
+    opacity: 0;
+    animation: fade-out 1s forwards;
+  }
+  
+  body.stop_scroll {
+    overflow: hidden;
+  }
+}
