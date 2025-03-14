@@ -17,6 +17,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar_container {
   z-index: 2;
   width: 100%;
@@ -930,12 +934,56 @@ body {
   }
 
   .navbar.close {
-    display: flex;
+    display: none;
     opacity: 0;
     animation: fade-out 1s forwards;
   }
-  
+
   body.stop_scroll {
     overflow: hidden;
   }
+
+  .section_00_left_triangle {
+    border-top: 20vh solid #002ed0;
+  }
+
+  .section_00_img {
+    object-position: 90% 30%;
+  }
+
+  .section_00_left_title {
+    font-size: 25px;
+    text-shadow: 2px 0px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .section_00_bottom_menu_card {
+    flex-direction: column;
+  }
+
+  .section_00_bottom_menu_card_icon {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .section_00_bottom_menu_title_container {
+    font-size: 9px;
+    margin-left: 10px;
+  }
+
+  .section_00_bottom_menu_sub_title {
+    font-size: 11px;
+  }
+
+  .section_01_top_bar {
+    text-align: center;
+  }
+
+  .section_01_top_bar h2 {
+    font-size: 20px;
+  }
+
+  .section_02 {
+    flex-direction: column;
+  }
+
 }
