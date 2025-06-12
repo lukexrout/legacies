@@ -32,6 +32,12 @@ a {
   justify-content: center;
 }
 
+.mobile_logo {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .navbar {
   border-bottom: 1px solid rgba(198, 175, 99, 0.5);
   width: 80%;
@@ -454,7 +460,6 @@ a {
 }
 
 .section_01_about_us_safe {
-  overflow: hidden;
   margin-left: 100px;
   margin-right: 100px;
   text-align: center;
@@ -921,18 +926,6 @@ a {
     animation: fade-in 3s forwards;
   }
 
-  .left_nav_container {
-    flex: 1;
-    align-items: baseline;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .logo {
-    height: 20vw;
-    margin-top: 20px;
-  }
-
   .navbar {
       display: none;
       position: absolute;
@@ -942,10 +935,9 @@ a {
       background-color: white;
       opacity: 0;
       transition: opacity 1s ease-in-out;
-      align-items: baseline;
   }
   .navbar.open {
-    display: flex;
+    display: block;
     opacity: 1;
     animation: fade-in 1s forwards;
   }
@@ -956,13 +948,63 @@ a {
     animation: fade-out 1s forwards;
   }
 
+  .mobile_logo {
+    opacity: 100%;
+    visibility: visible;
+    position: relative;
+  }
+
+  .left_nav_container {
+    width: 100%;
+    justify-content: center;  
+  }
+
+  .logo {
+    height: 20vw;
+    margin-top: 20px;
+  }
+
   .navbar_list_container {
     flex: 1;
     flex-direction: column;
+    width: 100%;
+    border: none;
   }
 
   .navbar_dropdown {
     right: 0;
+    position: relative;
+    opacity: 100%;
+    visibility: visible;
+  }
+  
+  .navbar_dropdown_item a {
+    border: none;
+    border-top: 1px dashed white;
+    border-radius: 0;
+    background: none;
+    padding-left: 40px;
+    margin: 0;
+  }
+
+  .navbar_item {
+    border: none;
+    border-bottom: 2px dashed white;
+  }
+
+  .button_safe {
+    position: absolute;
+    flex-direction: column;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .number {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
   }
 
   body.stop_scroll {
@@ -1052,7 +1094,7 @@ a {
     text-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
     font-size: 1.7vh;
     color: black;
-    margin-top: 5vh;
+    margin-top: 100px;
     padding-bottom: 21px;
   }
 
@@ -1066,9 +1108,13 @@ a {
 
   .section_02_menu_card_title_container {
     filter: brightness(100%);
-    margin-top: 40px;
+    margin-top: 140px;
     background-color: rgba(255, 255, 255, 0.75);
 
+  }
+
+  .section_02_menu_card_title_container h3 {
+    font-size: 17px; 
   }
 
   .section_02_menu_card_img {
@@ -1114,6 +1160,14 @@ a {
     font-size: 12px;
   }
 
+  .section_03_contact_form_dropdown_item {
+    width: 220px;
+  }
+
+  .section_03_contact_form_dropdown_item h3 {
+    font-size: 12px;
+  }
+
   .section_03_contact_form_dropdown_icon {
     width: 20px;
   }
@@ -1130,7 +1184,7 @@ a {
 
   .section_03_contact_form_contact {
     margin: 0;
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .footer_copyright {
